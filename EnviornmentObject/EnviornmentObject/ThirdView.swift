@@ -9,9 +9,10 @@ import SwiftUI
 
 struct ThirdView: View {
     @EnvironmentObject var user: User
+    @EnvironmentObject var contact: Contacts
     
     var body: some View {
-        Text("My name is \(user.name) and Id is \(user.id)")
+        Text("Hey! \(user.name), your mobile no is - \(contact.mobile) and id is \(user.id)")
             .font(.system(.title, weight: .bold))
             .foregroundColor(.purple)
             .padding()
