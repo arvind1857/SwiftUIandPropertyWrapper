@@ -11,3 +11,7 @@ class User: ObservableObject {
     @Published var name: String = String()
     @Published var id: Int = Int()
 }
+
+class Contacts: ObservableObject {
+    @Published var mobile: String = String()
+}
