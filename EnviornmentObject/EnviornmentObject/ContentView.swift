@@ -9,14 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var user: User = User()
+    @ObservedObject var contacts: Contacts = Contacts()
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 Spacer()
                 Text("Welcome \(user.name)")
                     .font(.system(.title, weight: .bold))
                 TextField("user", text: $user.name)
+                    .textFieldStyle(.roundedBorder)
+                TextField("mobile", text: $contacts.mobile)
                     .textFieldStyle(.roundedBorder)
                 
                 Spacer()
@@ -37,6 +40,7 @@ struct ContentView: View {
             .background(.teal)
         }
         .environmentObject(user)
+        .environmentObject(contacts)
         
     }
         
